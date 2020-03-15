@@ -1,8 +1,18 @@
-const a = 3;
 
+module.exports = {
+  sum: function(n1, n2){
+    return n1 + n2
+  },
 
-function sum() {
-  return a * 2;
+  sub: function(){
+
+  },
+
+  div: function(){
+
+  },
+
+  mult: function(){
+
+  }
 }
-
-sum();
