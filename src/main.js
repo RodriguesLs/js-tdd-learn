@@ -12,7 +12,4 @@ const fizzbuzz = (num) => {
     return num;
 }
 
-function lies() {
-    return 'bla'
-}
 export default fizzbuzz;
