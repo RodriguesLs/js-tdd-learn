@@ -1,7 +1,7 @@
 const fizzbuzz = (num) => {
 
     if(num === 0) return num;
-    
+
     if(num % 3 === 0) {
         if(num % 5 === 0) 
             return 'fizzbuzz';
@@ -12,4 +12,7 @@ const fizzbuzz = (num) => {
     return num;
 }
 
+function lies() {
+    return 'bla'
+}
 export default fizzbuzz;
