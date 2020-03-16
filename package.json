@@ -6,7 +6,13 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
-    "test:tdd": "npm run test -- --watch"
+    "test:tdd": "npm run test -- --watch",
+    "test:coverage": "nyc npm test"
+
+  },
+  "nyc": {
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
   },
   "husky": {
     "hooks": {}
@@ -40,6 +46,7 @@
     "eslint-plugin-import": "^2.20.1",
     "husky": "^4.2.3",
     "mocha": "^7.1.0",
+    "nyc": "^15.0.0",
     "webpack": "^4.42.0",
     "webpack-dev-server": "^3.10.3"
   },
