@@ -1,64 +1,37 @@
-import { expect } from 'chai';
-import { sum, sub, div, mult } from '../src/main';
+import {expect} from 'chai';
+import fizzbuzz from '../src/main'
 
-describe('Calc', function(){
-    // smoke tests
-    describe('Smoke tests', () => {
+describe('FizzBuzz Tdd', () => {
+
+    it('should be exist fizzbuzz method', () => {
+        expect(fizzbuzz(1)).to.be.exist;
+    });
+
+    context('should return, when I call the method with', () => {
+        it('number divided by 3, fizz', () => {
+            expect(fizzbuzz(3)).to.equal('fizz');
+            expect(fizzbuzz(6)).to.equal('fizz');
+        });
         
-        it('should exist method sum', () => {
-            expect(sum).to.exist;
-            expect(sum).to.be.a('function');
+        it('number divided by 5, buzz', () => {
+            expect(fizzbuzz(5)).to.equal('buzz');
+            expect(fizzbuzz(10)).to.equal('buzz');
+            expect(fizzbuzz(20)).to.equal('buzz');
         });
 
-        it('should exist method sub', () => {
-            expect(sub).to.exist;
-            expect(sub).to.be.a('function');
+        it('number divided by 5 and 3, fizzbuzz', () => {
+            expect(fizzbuzz(15)).to.equal('fizzbuzz');
+            expect(fizzbuzz(30)).to.equal('fizzbuzz');
         });
 
-        it('should exist method mult', () => {
-            expect(mult).to.exist;
-            expect(mult).to.be.a('function');
+        it('number divided by 0, zero', () => {
+            expect(fizzbuzz(0)).to.equal(0);
         });
 
-        it('should exist method div', () => {
-            expect(div).to.exist;
-            expect(div).to.be.a('function');
+        it('number is not divided by 3 or by 5, return self number', () => {
+            expect(fizzbuzz(7)).to.equal(7);
+            expect(fizzbuzz(8)).to.equal(8);
         });
-    });
+    })
 
-    describe('Test sum method', () => {
-        it('shold return 4 when sum(2,2)', () => {
-            expect(sum(2,2)).to.equal(4);
-        }) 
-        it('shold return 5 when sum(2,3)', () => {
-            expect(sum(2,3)).to.equal(5);
-        }) 
-    });
-    
-    describe('Test sub method', () => {
-        it('shold return 0 when sub(2,2)', () => {
-            expect(sub(2,2)).to.equal(0);
-        }) 
-        it('shold return -1 when sub(2,3)', () => {
-            expect(sub(2,3)).to.equal(-1);
-        }) 
-    });
-    
-    describe('Test mult method', () => {
-        it('shold return 4 when mult(2,2)', () => {
-            expect(mult(2,2)).to.equal(4);
-        }) 
-        it('shold return 6 when mult(2,3)', () => {
-            expect(mult(2,3)).to.equal(6);
-        }) 
-    });
-
-    describe('Test div method', () => {
-        it('shold return 4 when div(2,2)', () => {
-            expect(div(2,2)).to.equal(1);
-        }) 
-        it('shold return "Não é possível divisão por zero" when div(2,3)', () => {
-            expect(div(2,0)).to.equal('Não é possível divisão por zero');
-        }) 
-    });
-});
+})
